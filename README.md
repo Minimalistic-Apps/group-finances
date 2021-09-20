@@ -1,6 +1,6 @@
 # Minimalistic Group Finances
 
-> **WORK IN PROGRESS 👷**
+> **👷👷👷 WORK IN PROGRESS 👷👷👷**
 
 `Minimalistic` | `Free` | `Open Source` | `Private` | `Bitcoin` | `No adds` | `No trackers` | `No Google`
 
