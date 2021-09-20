@@ -1,7 +1,6 @@
 # Minimalistic Group Finances
 
-`Minimalistic` | `Free` | `Open Source` | `Private` | `No adds` | `No trackers` | `No Google` | `Bitcoin`
-
+`Minimalistic` | `Free` | `Open Source` | `Private` | `Bitcoin` | `No adds` | `No trackers` | `No Google`
 
 ## Feature requests
 
