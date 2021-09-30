@@ -39,7 +39,8 @@ class GroupsFragment : Fragment() {
 
     private fun initRecyclerView() {
         groupsRecyclerAdapter = GroupsRecyclerAdapter(
-            arrayOf(
+            requireContext(),
+            arrayListOf(
                 "Yo",
                 "Hi",
                 "a",

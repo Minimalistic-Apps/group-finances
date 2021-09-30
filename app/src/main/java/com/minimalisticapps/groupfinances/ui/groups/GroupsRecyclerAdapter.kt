@@ -1,5 +1,7 @@
 package com.minimalisticapps.groupfinances.ui.groups
 
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,19 +9,35 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.minimalisticapps.groupfinances.R
 
-class GroupsRecyclerAdapter(private val dataSet: Array<String>) :
+class GroupsRecyclerAdapter(private val context: Context, private val dataSet: ArrayList<String>) :
     RecyclerView.Adapter<GroupsRecyclerAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView = view.findViewById(R.id.textView)
 
         init {
-            // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.textView)
+            itemView.setOnLongClickListener { v: View ->
+                AlertDialog.Builder(context)
+                    .setTitle("Delete")
+                    .setIcon(R.drawable.ic_warning)
+                    .setMessage("Are you sure delete this group?")
+                    .setPositiveButton("Yes") { dialog, _ ->
+                        dataSet.removeAt(adapterPosition)
+                        notifyItemRemoved(adapterPosition)
+                        dialog.dismiss()
+                    }
+                    .setNegativeButton("No") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .create()
+                    .show()
+
+                true
+            }
         }
     }
 
