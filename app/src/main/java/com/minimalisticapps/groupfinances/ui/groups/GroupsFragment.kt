@@ -57,8 +57,6 @@ class GroupsFragment : Fragment() {
             )
         )
         val recyclerView = binding.groupsRecyclerView
-        val topSpacingItemDecoration = TopSpacingItemDecoration(30)
-        recyclerView.addItemDecoration(topSpacingItemDecoration)
         linearLayoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.adapter = groupsRecyclerAdapter

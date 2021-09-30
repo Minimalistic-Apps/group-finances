@@ -1,17 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    >
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_margin="4dp"
+    android:foreground="?selectableItemBackground">
 
     <TextView
-        android:layout_gravity="center_vertical"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text=""
         android:textSize="25sp" />
-
-</FrameLayout>
+</androidx.cardview.widget.CardView>
