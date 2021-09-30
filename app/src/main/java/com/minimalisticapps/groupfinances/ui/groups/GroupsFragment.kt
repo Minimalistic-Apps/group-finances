@@ -1,12 +1,15 @@
 package com.minimalisticapps.groupfinances.ui.groups
 
 import android.os.Bundle
+import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.minimalisticapps.groupfinances.R
 import com.minimalisticapps.groupfinances.databinding.FragmentGroupsBinding
 
 class GroupsFragment : Fragment() {
@@ -17,6 +20,23 @@ class GroupsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private val groupsData = arrayListOf(
+        "Yo",
+        "Hi",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a",
+        "a"
+    )
 
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var groupsRecyclerAdapter: GroupsRecyclerAdapter
@@ -33,30 +53,17 @@ class GroupsFragment : Fragment() {
         val root: View = binding.root
 
         initRecyclerView()
+        val addsBtn = root.findViewById<FloatingActionButton>(R.id.addGroupButton)
+        addsBtn.setOnClickListener { v ->
+            groupsData.add("+")
+            groupsRecyclerAdapter.notifyItemInserted(groupsData.size - 1)
+        }
 
         return root
     }
 
     private fun initRecyclerView() {
-        groupsRecyclerAdapter = GroupsRecyclerAdapter(
-            requireContext(),
-            arrayListOf(
-                "Yo",
-                "Hi",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a"
-            )
-        )
+        groupsRecyclerAdapter = GroupsRecyclerAdapter(requireContext(), groupsData)
         val recyclerView = binding.groupsRecyclerView
         linearLayoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = linearLayoutManager
