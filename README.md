@@ -17,6 +17,5 @@ Only features that are aligned with the purpose of the app will be considered.
 - [ ] Synchronization between peers
 - [ ] Track expenses
 - [ ] Categories for expenses
-- [ ] Graphs and reports
 - [ ] Multiple currencies in one group (conversion into base currncy in the time of spendature)
 - [ ] How much cash is in my wallet? (Tracking of staus of finances in different "wallets")
